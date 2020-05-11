@@ -56,8 +56,8 @@ Ainsi, ce projet permet à d'autres personnes de disposer d'une base de travail 
 
 Un ATF peut se composer des sections suivantes, parfois répétées en plusieurs occurrences :
 
-* **chapeau** date et code d'identification du ou des arrêt(s) à l'origine de l'ATF, ainsi qu'un titre qui indique en général les parties en cause ;
-* **regeste(s)** résumé(s) de l'ATF ;
+* **chapeau** : date et code d'identification du ou des arrêt(s) à l'origine de l'ATF, ainsi qu'un titre qui indique en général les parties en cause ;
+* **regeste(s)** : résumé(s) de l'ATF ;
 * **faits** : faits de la cause ;
 * **considérants** : raisonnement juridique opéré par le Tribunal.
 

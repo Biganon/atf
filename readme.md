@@ -45,8 +45,44 @@ Le projet a été motivé par mon travail d'assistant à l'Université de Genèv
 
 Si cette méthode fonctionne, elle est extrêmement lente, et peut être massivement automatisée, à condition toutefois de disposer de l'ensemble des ATF dans un format exploitable. C'est ce qui a motivé ce projet, ainsi que l'accent mis sur l'aspect "citations croisées" (quels arrêts sont cités par tel arrêt, et quels arrêts le citent lui).
 
+En outre, le site internet du Tribunal fédéral est de piètre qualité. La navigation est peu agréable, et les arrêts eux-mêmes sont souvent mal structurés :
+
+* certains arrêts contiennent des balises HTML orphelines, ou (par exemple) la totalité du chapeau à l'intérieur d'une balise servant normalement à indiquer une référence à une base légale ;
+* certains arrêts ont manifestement été mal scannés, ou ont fait l'objet de fautes de frappe, ce qui rend notamment difficile l'extraction des dates (cf. l'ATF 100 II 92 et le mois de "geunaio", l'ATF 86 II 106 et le mois de "Februer", l'ATF 98 Ia 175 et le mois de "févier", et j'en passe).
+
+Ainsi, ce projet permet à d'autres personnes de disposer d'une base de travail (plus) propre.
+
+## Structure
+
+Un ATF peut se composer des sections suivantes, parfois répétées en plusieurs occurrences :
+
+* **chapeau** date et code d'identification du ou des arrêt(s) à l'origine de l'ATF, ainsi qu'un titre qui indique en général les parties en cause ;
+* **regeste(s)** résumé(s) de l'ATF ;
+* **faits** : faits de la cause ;
+* **considérants** : raisonnement juridique opéré par le Tribunal.
+
+Il y a toujours un seul chapeau, et une seule section "considérants". Il y a en général un seul regeste, mais environ 1.5% des ATF en contiennent plusieurs (jusqu'à 8 pour l'ATF 137 V 210). Il y a en général une section "faits", mais environ 12% des ATF n'en contiennent pas.
+
+Cette structure est reflétée dans les fichiers JSON. Le reste des champs est trivial à comprendre.
+
+Note : les changements de page sont indiqués par le nouveau numéro de page, entre deux caractères "tube" (`|`).
+
 ## Avenir
 
 Les ATF à venir seront ajoutés au fur et à mesure de leur publication sur le site internet du Tribunal fédéral.
 
 Un script simple reprenant la méthodologie détaillée ci-dessus sera peut-être créé, ainsi qu'un outil permettant de passer d'obtenir la ou les pages à partir d'un numéro de considérant, et vice-versa.
+
+## Trivia
+
+Quelques infos diverses :
+
+* 19'537 ATF ont été pris en compte.
+* ATF le plus long : ATF 126 II 522 (190'059 octets, 79 pages)
+* ATF le plus court : ATF 97 I 608 (682 octets, 1 phrase)
+* La date la plus fréquente pour un ATF est le 19 décembre, avec 97 ATF.
+* Les dates les moins fréquentes sont le 25 décembre et le 1er janvier, avec aucun ATF, puis le 26 décembre et le 2 janvier, avec 1 ATF chacune.
+* L'année la plus prolifique fut 1991, avec 420 arrêts.
+* L'année la moins prolifique fut 1962, avec 183 arrêts.
+* Environ 77% des ATF sont en allemand, 19% en français, 4% en italien, et 2 arrêts sont en romanche (ATF 122 I 93 et ATF 139 II 145).
+* Un seul ATF (ATF 91 II 25) contient le mot "framboise", et il est en allemand.
